@@ -1,0 +1,11 @@
+<?php session_start(); $debug=False; set_time_limit(0); ?>
+<?php
+  if (!isset($_SESSION["captchaTokens"]))
+  {
+    $_SESSION["captchaTokens"]=[];
+  }
+  if (!isset($_SESSION["previousCaptchaTokens"]))
+  {
+    $_SESSION["previousCaptchaTokens"]="";
+  }
+  foreach ($_SESSION["captchaTokens"] as $harvestedTokens)
